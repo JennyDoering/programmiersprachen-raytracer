@@ -18,7 +18,17 @@ TEST_CASE("Sphere area + volume", "[Aufgabe 5.2]") {
   Sphere k2 = Sphere(float {10.0f}, glm::vec3 {8.0f, 4.0f, 6.0f});
   REQUIRE(Approx(k2.area()) == 400 * M_PI); 
   REQUIRE(Approx(k2.volume()) == 4188.7902f);
+}
 
+TEST_CASE("Box area + volume", "[Aufgabe 5.2]") {
+
+  Box q1 = Box(glm::vec3 {2.0f, 3.0f, 4.0f}, glm::vec3 {5.0f, 6.0f, 7.0f});
+  REQUIRE(Approx(q1.area()) == 54.0f);
+  REQUIRE(Approx(q1.volume()) == 27.0f);
+
+  Box q2 = Box(glm::vec3 {4.0f, 1.0f, 6.0f}, glm::vec3 {1.0f, 2.0f, 3.0f});
+  REQUIRE(Approx(q2.area()) == 30.0f);
+  REQUIRE(Approx(q2.volume()) == 9.0f);
 }
 
 int main(int argc, char *argv[])

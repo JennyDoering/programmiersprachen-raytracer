@@ -9,6 +9,17 @@ float Box::area() const {
     float a = (max_.x - min_.x);
     float b = (max_.y - min_.y);
     float c = (max_.z - min_.z);
+    if(a < 0.0f) {
+        a = -a;
+    }
+
+    if(b < 0.0f) {
+        b = -b;
+    }
+
+    if(c < 0.0f) {
+        c = -c;
+    }
     return (2.0f * (a * b + b * c + a * c));
 }
 
