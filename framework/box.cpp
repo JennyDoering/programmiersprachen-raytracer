@@ -2,7 +2,7 @@
 #include <cmath>
 
 Box::Box() : min_{0.0f, 0.0f, 0.0f}, max_{100.0f, 100.0f, 100.0f} {}
-Box::Box(glm::vec3 min_, glm::vec3 max_) : min_(min_), max_(max_) {}
+Box::Box(std::string name_, Color color_, glm::vec3 min_, glm::vec3 max_) : name_(name_), color_(color_), min_(min_), max_(max_) {}
 
 float Box::area() const {
 
