@@ -2,17 +2,23 @@
 #define SHAPE_HPP
 
 #include "color.hpp"
+#include <string>
 
 class Shape{
     public:
         Shape();
-        Shape(std::string name_, Color color_);
+        Shape(std::string const& name_, Color const& color_);
+        std::string  const& getName();
+        Color const& getColor();
         virtual float area() const = 0; // Oberfläche des Objekts
         virtual float volume() const = 0; // Volumen des Objekts
+        virtual std::ostream& print(std::ostream& os) const;
 
-    private:
+    protected:
         Color color_;
         std::string name_;
 };
+
+std::ostream& operator <<(std::ostream& os, Shape const& s);
 
 #endif 
