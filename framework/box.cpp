@@ -1,8 +1,8 @@
 #include "box.hpp"
 #include <cmath>
 
-Box::Box() : min_{0.0f, 0.0f, 0.0f}, max_{100.0f, 100.0f, 100.0f} {}
-Box::Box(std::string name_, Color color_, glm::vec3 min_, glm::vec3 max_) : name_(name_), color_(color_), min_(min_), max_(max_) {}
+Box::Box() : Shape(), min_(0.0f, 0.0f, 0.0f), max_(100.0f, 100.0f, 100.0f) {}
+Box::Box(std::string name, Color color, glm::vec3 min, glm::vec3 max) : Shape(name, color), min_(min), max_(max) {}
 
 float Box::area() const {
 
