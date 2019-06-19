@@ -1,6 +1,6 @@
 #include "shape.hpp"
 
-Shape::Shape(): name_{"default Object"}, color_{1.0f, 1.0f, 1.0f}{}
+
 
 Shape::Shape(std::string const& name_, Color const& color_) : name_(name_), color_(color_) {}
 

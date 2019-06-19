@@ -51,18 +51,27 @@ TEST_CASE("print Shape", "[Aufgabe 5.4]") {
 
 TEST_CASE("print Sphere", "[Aufgabe 5.5]") {
 
+  std::cout << "\n";
+
   std::cout << "print Sphere (Aufgabe 5.5) \n \n";
-  Sphere k4 = Sphere("Kugel 4", {1.0f, 0.0f, 0.0f}, float {2.0f}, glm::vec3 {5.0f, 1.0f, 3.0f});
-  std::cout << k4; 
+  Shape* k4 = new Sphere("Kugel 4", {1.0f, 0.0f, 0.0f}, float {2.0f}, glm::vec3 {5.0f, 1.0f, 3.0f});
+  std::cout << *k4; 
+
+  delete k4;
 }
 
 TEST_CASE("print Box", "[Aufgabe 5.5]") {
 
   std::cout << "\n";
   
-  std::cout << "print Box (Aufgabe 5.4) \n \n";
-  Box q4 = Box("Quader 4", {0.0f, 1.0f, 0.0f}, glm::vec3 {2.0f, 3.0f, 4.0f}, glm::vec3 {5.0f, 6.0f, 7.0f});
-  std::cout << q4;  
+  std::cout << "print Box (Aufgabe 5.5) \n \n";
+  // Box q4 = Box("Quader 4", {0.0f, 1.0f, 0.0f}, glm::vec3 {2.0f, 3.0f, 4.0f}, glm::vec3 {5.0f, 6.0f, 7.0f});
+  // std::cout << q4;
+
+  Box* q4 = new Box("Quader 4", {0.0f, 1.0f, 0.0f}, glm::vec3 {2.0f, 3.0f, 4.0f}, glm::vec3 {5.0f, 6.0f, 7.0f});
+  std::cout << *q4;
+
+  delete q4;
 }
 
 int main(int argc, char *argv[])
