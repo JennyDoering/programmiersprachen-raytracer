@@ -2,6 +2,8 @@
 #include <catch.hpp>
 #include "sphere.hpp"
 #include "box.hpp"
+#include <glm/glm.hpp>
+#include <glm/gtx/intersect.hpp>
 
 // TEST_CASE("Default-Constructor Sphere", "[Aufgabe 5.2]") {
 //   Sphere k1;
@@ -68,10 +70,31 @@ TEST_CASE("print Box", "[Aufgabe 5.5]") {
   // Box q4 = Box("Quader 4", {0.0f, 1.0f, 0.0f}, glm::vec3 {2.0f, 3.0f, 4.0f}, glm::vec3 {5.0f, 6.0f, 7.0f});
   // std::cout << q4;
 
-  Box* q4 = new Box("Quader 4", {0.0f, 1.0f, 0.0f}, glm::vec3 {2.0f, 3.0f, 4.0f}, glm::vec3 {5.0f, 6.0f, 7.0f});
+  Shape* q4 = new Box("Quader 4", {0.0f, 1.0f, 0.0f}, glm::vec3 {2.0f, 3.0f, 4.0f}, glm::vec3 {5.0f, 6.0f, 7.0f});
   std::cout << *q4;
 
   delete q4;
+}
+
+TEST_CASE("intersect_ray_sphere", "[intersect || Aufgabe 5.6]") {
+  // Ray
+  glm::vec3 ray_origin{0.0f, 0.0f, 0.0f}; //1
+  // ray direction has to be normalized
+  // you can use:
+  // v = glm::normalize(some_vector)
+  glm::vec3 ray_direction{0.0f, 0.0f, 1.0f};
+
+  // Sphere
+  glm::vec3 sphere_center{0.0f, 0.0f, 5.0f};
+  float sphere_radius{1.0f};
+
+  float distance = 0.0f;
+  auto result = glm::intersectRaySphere(
+    ray_origin, ray_direction, 
+    sphere_center, 
+    sphere_radius * sphere_radius, // squared radius !!!
+    distance);
+    REQUIRE(distance == Approx(4.0f));
 }
 
 int main(int argc, char *argv[])

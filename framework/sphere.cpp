@@ -17,3 +17,7 @@ std::ostream& Sphere::print(std::ostream& os) const {
     os << "Radius: " << radius_ << "\n" << "Mittelpunkt: {" << mpoint_.x << ", " << mpoint_.y << ", " << mpoint_.z << "} \n";
     return os;
 }
+
+HitPoint Sphere::intersect(Ray object_) const {
+
+}
