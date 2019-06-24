@@ -106,6 +106,23 @@ TEST_CASE("intersect_ray_sphere", "[intersect || Aufgabe 5.6]") {
   // REQUIRE(distance == Approx(2.0f));
 }
 
+TEST_CASE("Schluesselwort virtual","[Aufgabe 5.8]") {
+  std::cout << "\n";
+  std::cout << "Aufgabe 5.8 \n";
+
+  Color red{255, 0, 0};
+  glm::vec3 position{0.0f, 0.0f, 0.0f};
+
+  Sphere* s1 = new Sphere{"sphere0", red, 1.2f, position};
+  Shape* s2 = new Sphere{"sphere1", red, 1.2f, position};
+
+  s1->print(std::cout);
+  s2->print(std::cout);
+
+  delete s1;
+  delete s2;
+}
+
 int main(int argc, char *argv[])
 {
   return Catch::Session().run(argc, argv);
