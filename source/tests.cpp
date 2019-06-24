@@ -95,6 +95,15 @@ TEST_CASE("intersect_ray_sphere", "[intersect || Aufgabe 5.6]") {
     sphere_radius * sphere_radius, // squared radius !!!
     distance);
     REQUIRE(distance == Approx(4.0f));
+
+  // // test2
+  // glm::vec3 ray_origin2{1.5f, 5.0f, 0.0f};
+  // glm::vec3 ray_direction2{0.0f, 0.0f, 6.5f};
+  // glm::vec3 sphere_center2{0.0f, 0.0f, 1.0f};
+  // float sphere_radius2{4.0f};
+  // float distance2 = 0;
+  // auto result2 = glm::intersectRaySphere(ray_origin2, ray_direction2, sphere_center2, sphere_radius2 * sphere_radius2, distance2);
+  // REQUIRE(distance == Approx(2.0f));
 }
 
 int main(int argc, char *argv[])

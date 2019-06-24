@@ -3,7 +3,9 @@
 
 #include "shape.hpp"
 #include <glm/vec3.hpp>
+#include <glm/gtx/intersect.hpp>
 #include "ray.hpp"
+#include "hitpoint.hpp"
 
 class Sphere: public Shape {
     public: 
@@ -12,12 +14,12 @@ class Sphere: public Shape {
         virtual float area() const override;
         virtual float volume() const override;
         virtual std::ostream& print(std::ostream& os) const override;
-        HitPoint intersect(Ray object_) const;
+        HitPoint intersect(Ray const& object_, float& distance) const;
 
     private:
         float radius_;
         glm::vec3 mpoint_;
-        Ray object_;
+        Ray object;
 };
 
 #endif
