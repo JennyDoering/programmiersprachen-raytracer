@@ -6,7 +6,7 @@
 
 class Shape{
     public:
-        /*virtual*/ ~Shape();
+        virtual ~Shape();
         Shape(std::string const& name_ = "default_name", Color const& color_ = Color{0.0f, 0.0f, 0.0f});
         std::string  const& getName();
         Color const& getColor();
