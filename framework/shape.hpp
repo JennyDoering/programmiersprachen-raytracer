@@ -6,8 +6,8 @@
 
 class Shape{
     public:
-        ~Shape() {};
-        Shape(std::string const& name_ = "default_name", Color const& color_ = Color{0.0f, 0.0f, 0.0f} );
+        virtual ~Shape();
+        Shape(std::string const& name_ = "default_name", Color const& color_ = Color{0.0f, 0.0f, 0.0f});
         std::string  const& getName();
         Color const& getColor();
         virtual float area() const = 0; // Oberfläche des Objekts

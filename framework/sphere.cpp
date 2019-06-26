@@ -18,17 +18,17 @@ std::ostream& Sphere::print(std::ostream& os) const {
     return os;
 }
 
-HitPoint Sphere::intersect(Ray const& object, float& distance_) const {
+HitPoint Sphere::intersect(Ray const& object, float& distance) const {
     HitPoint h{};
-    h.schnitt = glm::intersectRaySphere(object.origin, object.direction, mpoint_, radius_ * radius_, distance_);
+    h.schnitt = glm::intersectRaySphere(object.origin, object.direction, mpoint_, radius_ * radius_, distance);
     if(h.schnitt == false) {
         return h;
     }
     else {
-        h.distance = distance_;
+        h.distance = distance;
         h.hitcol = color_;
         h.name = name_;
-        h.point3d = object.origin + distance_ * object.direction;
+        h.point3d = object.origin + distance * object.direction;
         h.richtung = object.direction;
         h.schnitt = true;
         return h;

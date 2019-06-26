@@ -2,7 +2,7 @@
 
 
 
-Shape::Shape(std::string const& name_, Color const& color_) : name_(name_), color_(color_) {}
+Shape::Shape(std::string const& name_, Color const& color_) : name_(name_), color_(color_) {std::cout << "Aufruf des Konstruktors \n \n";}
 
 std::string const& Shape::getName() {
     return name_;
@@ -20,3 +20,5 @@ std::ostream& Shape::print(std::ostream& os) const {
 std::ostream& operator<<(std::ostream& os, Shape const& s) {
     return s.print(os);
 }
+
+Shape::~Shape() {std::cout << "Aufruf des Destruktors  \n \n";}
